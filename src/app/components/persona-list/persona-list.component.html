@@ -5,6 +5,7 @@
             <th scope="col">Nombre</th>
             <th scope="col">Apellido</th>
             <th scope="col">Edad</th>
+            <th scope="col">Acciones</th>
         </tr>
     </thead>
     <tbody *ngFor="let persona of personas">
@@ -13,6 +14,12 @@
             <td>{{persona.nombre}}</td>
             <td>{{persona.apellido}}</td>
             <td>{{persona.edad}}</td>
+            <td>
+                <button class="btn btn-warning" [routerLink]="['/personas/edit', persona._id]">
+                    Editar
+                </button>&nbsp;
+                <button class="btn btn-danger" (click)="deletePersona(persona._id!)">Eliminar</button>
+            </td>
         </tr>
     </tbody>
 </table>

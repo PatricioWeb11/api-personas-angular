@@ -27,4 +27,18 @@ export class PersonaListComponent implements OnInit {
     )
   }
 
+  updatePersona(){
+
+  }
+
+  deletePersona(id: string){
+    return this.personaService.deletePersona(id)
+    .subscribe(
+      res => {
+        this.getPersonas();
+      },
+      err => console.log(err)
+    )
+  }
+
 }

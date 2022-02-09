@@ -25,12 +25,12 @@ export class PersonaService {
     return this.http.post<Persona>(`${this.BASE_URL}/personas/create`, persona);
   }
 
-  // updatePersona(id: string, persona: Persona): Observable<Persona>{
-  //   return this.http.put<Persona>(`${this.BASE_URL}/persona/update?personaID=${id}`, persona);
-  // }
+  updatePersona(id: string, persona: Persona): Observable<Persona>{
+    return this.http.put<Persona>(`${this.BASE_URL}/personas/update?personaID=${id}`, persona);
+  }
 
-  // deletePersona(id: string): Observable<Persona>{
-  //   return this.http.delete<Persona>(`${this.BASE_URL}/persona/delete?personaID=${id}`);
-  // }
+  deletePersona(id: string): Observable<Persona>{
+    return this.http.delete<Persona>(`${this.BASE_URL}/personas/delete?personaID=${id}`);
+  }
 
 }
